@@ -20,4 +20,10 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "User | Project"
   end
 
+  test "should get main" do
+    get static_pages_main_url
+    assert_response :success
+    assert_select "title", "Main | Project"
+  end
+
 end
