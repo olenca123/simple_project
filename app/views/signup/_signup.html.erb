@@ -1,0 +1,8 @@
+<li>
+	<%= link_to signup.first_name, signup %>
+	  <% if current_signup.admin? && !current_signup?(signup) %>
+    | <%= link_to "delete", signup, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+
+</li>

@@ -1,11 +1,28 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+olga:
+  first_name: Olga
+  last_name: Antonchik
+  email: antonchik.olga@gmail.com
+  password_digest: <%= Signup.digest('password') %>
 
-two:
-  first_name: MyString
-  last_name: MyString
-  email: MyString
+
+pavel:
+  first_name: Pavel
+  last_name: Tsetsko
+  email: tsetsko.pavel@gmail.com
+  password_digest: <%= Signup.digest('password') %>
+
+  galina:
+  first_name: Galina
+  last_name: Antonchik
+  email: antonchik.galina@gmail.com
+  password_digest: <%= Signup.digest('password') %>
+
+  <% 30.times do |n| %>
+  signup_<%= n %>:
+  first_name:  <%= "Signup #{n}" %>
+  last_name:  <%= "Signup #{n}" %>
+  email: <%= "signup-#{n}@example.com" %>
+  password_digest: <%= Signup.digest('password') %>
+<% end %>
